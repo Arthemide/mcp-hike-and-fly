@@ -1,0 +1,13 @@
+{
+    "mcpServers": {
+        "strava": {
+            "command": "/Users/gireg.roussel/.local/bin/uv",
+            "args": [
+                "--directory",
+                ".",
+                "run",
+                "server.py"
+            ]
+        }
+    }
+}

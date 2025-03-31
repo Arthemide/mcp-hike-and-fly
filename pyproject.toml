@@ -1,9 +1,12 @@
 [project]
 name = "mcp-strava"
 version = "0.1.0"
-description = "Add your description here"
+authors = [
+    { name = "Gireg Roussel", email = "giregroussel@free.com" },
+]
+description = "MCP Strava integration"
 readme = "README.md"
-requires-python = ">=3.10.14"
+requires-python = ">=3.10"
 dependencies = [
     "aiohttp>=3.11.14",
     "anyio>=4.9.0",
@@ -50,3 +53,13 @@ skip-magic-trailing-comma = false
 
 # Like Black, automatically detect the appropriate line ending.
 line-ending = "auto"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    ".",
+    "src"
+]
+testpaths = [
+    "tests",
+]
+asyncio_mode = "strict"

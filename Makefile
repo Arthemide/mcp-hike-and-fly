@@ -12,7 +12,7 @@ help:
 		awk 'BEGIN {FS = "(: |##)"}; {printf "\033[36m%-30s\033[0m %s\n", $$2, $$3}'
 
 .PHONY: lint ## Run linter
-check:
+lint:
 	ruff check .
 
 .PHONY: fix ## Run linter and fix

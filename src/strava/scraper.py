@@ -1,9 +1,8 @@
-
 import aiohttp
 import pandas as pd
 from bs4 import BeautifulSoup
 
-from strava.utils import COOKIES, HEADERS, PARAMS
+from .utils import COOKIES, HEADERS, PARAMS
 
 
 async def parse_strava_leaderboard(url) -> pd.DataFrame:

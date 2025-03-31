@@ -1,6 +1,7 @@
 import mcp.types as types
 from mcp.server.fastmcp import FastMCP
 
+
 def register_location_prompts(mcp: FastMCP):
     @mcp.prompt("find-segments-by-address")
     async def find_segments_by_address(address: str) -> types.GetPromptResult:

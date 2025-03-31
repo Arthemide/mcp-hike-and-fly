@@ -1,6 +1,7 @@
 import mcp.types as types
 from mcp.server.fastmcp import FastMCP
 
+
 def register_segment_prompts(mcp: FastMCP):
     @mcp.prompt("find-segments-by-coordinates")
     async def find_segments_by_coordinates(
@@ -22,17 +23,3 @@ def register_segment_prompts(mcp: FastMCP):
                 )
             ]
         )
-
-    @mcp.prompt("get-segment-ranking")
-    async def get_segment_ranking_prompt(segment_id: str) -> types.GetPromptResult:
-        return types.GetPromptResult(
-            messages=[
-                types.PromptMessage(
-                    role="user",
-                    content=types.TextContent(
-                        type="text",
-                        text=f"Get the ranking information for Strava segment with ID: {segment_id}"
-                    )
-                )
-            ]
-        ) 

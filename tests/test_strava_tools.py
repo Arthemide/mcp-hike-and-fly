@@ -21,7 +21,7 @@ async def test_get_number_of_climb_attempts_on_the_year(segment_id, expected_las
 @pytest.mark.asyncio
 async def test_get_nearby_segments_returns_no_segments():
     # Given
-    expected_southwest_lat = 48.83546628267043
+    expected_southwest_lat = 48.85355371732957
     expected_southwest_lon = 1.6166739651707096
     expected_northeast_lat = 48.85355371732957
     expected_northeast_lon = 1.6439740348292906

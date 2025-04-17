@@ -38,17 +38,17 @@ async def get_latitude_and_longitude(address: str) -> Tuple[float, float]:
     logger.debug(f"Latitude: {latitude}, Longitude: {longitude}")
     return (latitude, longitude)
 
-def define_number_kilometers_per_degree_longitude(lat: float) -> float:
+def define_number_kilometers_per_degree_longitude(latitude: float) -> float:
     """Define the number of kilometers per degree of longitude.
 
     Args:
-        lat: Latitude of the location
+        latitude: Latitude of the location
 
     Returns:
         kilometers_per_degree: The number of kilometers per degree of latitude
     """
     earth_circumference = 40075.017
-    return earth_circumference * cos(lat * pi / 180) / 360
+    return earth_circumference * cos(latitude * pi / 180) / 360
 
 def define_number_kilometers_per_degree_latitude() -> float:
     """Define the number of kilometers per degree of latitude.
@@ -58,32 +58,32 @@ def define_number_kilometers_per_degree_latitude() -> float:
     """
     return 110.574
 
-def define_rectangular_area(lat: float, lon: float, distance: float = 10) -> Tuple[float, float, float, float]:
+def define_rectangular_area(latitude: float, longitude: float, distance: float = 10) -> Tuple[float, float, float, float]:
     """Define a rectangular area.
     
     Args:
-        lat: Latitude of the center of the area
-        lon: Longitude of the center of the area
+        latitude: Latitude of the center of the area
+        longitude: Longitude of the center of the area
         distance: Distance in kilometers from the center to the corners of the rectangle
     
     Returns:
-        southwest_lat: Latitude of the southwest corner of the bounding box
-        southwest_lon: Longitude of the southwest corner of the bounding box
-        northeast_lat: Latitude of the northeast corner of the bounding box
-        northeast_lon: Longitude of the northeast corner of the bounding box
+        southwest_latitude: Latitude of the southwest corner of the bounding box
+        southwest_longitude: Longitude of the southwest corner of the bounding box
+        northeast_latitude: Latitude of the northeast corner of the bounding box
+        northeast_longitude: Longitude of the northeast corner of the bounding box
     """
     logger.debug(f"Distance: {distance} kilometers")
-    kilometers_per_degree_lat = define_number_kilometers_per_degree_latitude()
-    kilometers_per_degree_lon = define_number_kilometers_per_degree_longitude(lat)
+    kilometers_per_degree_latitude = define_number_kilometers_per_degree_latitude()
+    kilometers_per_degree_longitude = define_number_kilometers_per_degree_longitude(latitude)
 
-    southwest_lat = lat - (distance / kilometers_per_degree_lat)
-    southwest_lon = lon - (distance / kilometers_per_degree_lon)
-    northeast_lat = lat + (distance / kilometers_per_degree_lat)
-    northeast_lon = lon + (distance / kilometers_per_degree_lon)
+    southwest_latitude = latitude - (distance / kilometers_per_degree_latitude)
+    southwest_longitude = longitude - (distance / kilometers_per_degree_longitude)
+    northeast_latitude = latitude + (distance / kilometers_per_degree_latitude)
+    northeast_longitude = longitude + (distance / kilometers_per_degree_longitude)
 
-    logger.debug(f"Southwest: {southwest_lat}, {southwest_lon}")
-    logger.debug(f"Northeast: {northeast_lat}, {northeast_lon}")
-    return (southwest_lat, southwest_lon, northeast_lat, northeast_lon)
+    logger.debug(f"Southwest: {southwest_latitude}, {southwest_longitude}")
+    logger.debug(f"Northeast: {northeast_latitude}, {northeast_longitude}")
+    return (southwest_latitude, southwest_longitude, northeast_latitude, northeast_longitude)
 
 def register_location_tools(mcp: FastMCP):
     @mcp.tool()
@@ -91,5 +91,5 @@ def register_location_tools(mcp: FastMCP):
         return await get_latitude_and_longitude(address)
 
     @mcp.tool()
-    def define_rectangular_area_tool(lat: float, lon: float, distance: float = 10000) -> Tuple[float, float, float, float]:
-        return define_rectangular_area(lat, lon, distance) 
+    def define_rectangular_area_tool(latitude: float, longitude: float, distance: float = 10000) -> Tuple[float, float, float, float]:
+        return define_rectangular_area(latitude, longitude, distance) 

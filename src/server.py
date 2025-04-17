@@ -4,7 +4,9 @@ from mcp.server.fastmcp import FastMCP
 
 from prompts.location import register_location_prompts
 from prompts.segments import register_segment_prompts
-from tools.nominatim import register_location_tools
+from tools.nominatim import (
+    register_location_tools,
+)
 from tools.strava import register_segment_tools
 
 # Configure logging
@@ -15,12 +17,13 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Initialize FastMCP server
-mcp = FastMCP("strava")
+mcp = FastMCP("hike-and-fly")
 
-# Register tools and prompts
+# Register tools
 register_location_tools(mcp)
 register_segment_tools(mcp)
 
+# Register prompts
 register_location_prompts(mcp)
 register_segment_prompts(mcp)
 

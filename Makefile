@@ -11,6 +11,14 @@ help:
 	grep -E '^\.PHONY: [a-zA-Z0-9_-]+ .*?## .*$$' $(MAKEFILE_LIST) | \
 		awk 'BEGIN {FS = "(: |##)"}; {printf "\033[36m%-30s\033[0m %s\n", $$2, $$3}'
 
+.PHONY: install ## Install dependencies
+install:
+	uv sync
+
+.PHONY: run ## Run the host CLI
+run:
+	uv run host/jiki.py
+
 .PHONY: lint ## Run linter
 lint:
 	ruff check .

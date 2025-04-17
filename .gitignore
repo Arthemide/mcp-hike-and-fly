@@ -11,3 +11,6 @@ wheels/
 .env
 .vscode
 .cursor
+
+# Traces
+interaction_traces/

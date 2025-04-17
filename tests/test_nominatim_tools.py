@@ -1,5 +1,6 @@
 from src.tools.nominatim import define_rectangular_area
 
+
 def test_define_rectangle_area_one_kilometer():
     # Given
     latitude = 48.844510
@@ -55,6 +56,25 @@ def test_define_rectangle_area_five_kilometers():
 
     # When
     actual_southwest_lat, actual_southwest_lon, actual_northeast_lat, actual_northeast_lon = define_rectangular_area(latitude, longitude, distance)
+
+    # Then
+    assert actual_southwest_lat == expected_southwest_lat
+    assert actual_southwest_lon == expected_southwest_lon
+    assert actual_northeast_lat == expected_northeast_lat
+    assert actual_northeast_lon == expected_northeast_lon
+
+def test_define_rectangle_area_n_kilometers():
+    # Given
+    latitude = 48.720867
+    longitude = 1.587213
+
+    expected_southwest_lat = 48.63042982670429
+    expected_southwest_lon = 1.4510485115912939
+    expected_northeast_lat = 48.81130417329571
+    expected_northeast_lon = 1.723377488408706
+
+    # When
+    actual_southwest_lat, actual_southwest_lon, actual_northeast_lat, actual_northeast_lon = define_rectangular_area(latitude, longitude,)
 
     # Then
     assert actual_southwest_lat == expected_southwest_lat

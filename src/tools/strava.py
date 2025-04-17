@@ -18,20 +18,20 @@ logger = logging.getLogger(__name__)
 STRAVA_API_BASE = "https://www.strava.com/api/v3"
 STRAVA_URL_BASE = "https://www.strava.com/"
 
-async def get_nearby_segments(southwest_lat: float, southwest_lon: float, northeast_lat: float, northeast_lon: float) -> str:
+async def get_nearby_segments(southwest_latitude: float, southwest_longitude: float, northeast_latitude: float, northeast_longitude: float) -> str:
     """Get nearby segments for a location.
 
     Args:
-        southwest_lat: Latitude of the southwest corner of the bounding box
-        southwest_lon: Longitude of the southwest corner of the bounding box
-        northeast_lat: Latitude of the northeast corner of the bounding box
-        northeast_lon: Longitude of the northeast corner of the bounding box
+        southwest_latitude: Latitude of the southwest corner of the bounding box
+        southwest_longitude: Longitude of the southwest corner of the bounding box
+        northeast_latitude: Latitude of the northeast corner of the bounding box
+        northeast_longitude: Longitude of the northeast corner of the bounding box
 
     Returns:
         A formatted string containing segment details
     """
-    logger.debug(f"Fetching nearby segments for coordinates: lat={southwest_lat}, lon={southwest_lon}, lat={northeast_lat}, lon={northeast_lon}")
-    url = f"{STRAVA_API_BASE}/segments/explore?bounds={southwest_lat},{southwest_lon},{northeast_lat},{northeast_lon}&activity_type=riding"
+    logger.debug(f"Fetching nearby segments for coordinates: southwest_latitude={southwest_latitude}, southwest_longitude={southwest_longitude}, northeast_latitude={northeast_latitude}, northeast_longitude={northeast_longitude}")
+    url = f"{STRAVA_API_BASE}/segments/explore?bounds={southwest_latitude},{southwest_longitude},{northeast_latitude},{northeast_longitude}&activity_type=riding"
     data = await make_strava_request(url)
     logger.debug(f"Received response from Strava API: {data}")
 

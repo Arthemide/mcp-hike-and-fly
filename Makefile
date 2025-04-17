@@ -17,7 +17,7 @@ install:
 
 .PHONY: host ## Run the host CLI
 host:
-	uv run host/jiki.py
+	uv run jiki/host.py
 
 .PHONY: lint ## Run linter
 lint:

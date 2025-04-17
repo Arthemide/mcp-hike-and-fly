@@ -467,7 +467,7 @@ wheels = [
 
 [[package]]
 name = "jiki"
-version = "0.0.7"
+version = "0.0.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "fastmcp" },
@@ -475,9 +475,9 @@ dependencies = [
     { name = "mcp" },
     { name = "pytest" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/2f/98/ed2ac32e44a3ad4652f73408bfbcc23464e221083d7dac814768b04b8384/jiki-0.0.7.tar.gz", hash = "sha256:a58d53cc97d1d024ac461f1bb29978254f6afe3a25d5a6597df900c4325b4cfa", size = 22170 }
+sdist = { url = "https://files.pythonhosted.org/packages/6a/9d/4793aa62d691bef19f89d5a9db77061ac4bc91696241d3c4bc0af3ae12fa/jiki-0.0.8.tar.gz", hash = "sha256:a7100c96bce9be06da1516fa0c3dbb11c39c780ebf221ae354e8d46d3604445f", size = 22769 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/78/e3/e8a89606181fd483bb16d3da9b0939dbb7f38cd063e082cf528b4153da45/jiki-0.0.7-py3-none-any.whl", hash = "sha256:02e51e542e16c73c4374adb754f2c2a52a26b960530cc0b8cc81cf2355549b40", size = 24467 },
+    { url = "https://files.pythonhosted.org/packages/e4/c1/a7222d684c8e7e26a970de85a284828aa24980fd2b03e64650115cce0181/jiki-0.0.8-py3-none-any.whl", hash = "sha256:1f58f27312f73c2037cb0f5786e74e8bc62e9e10c6e36e62e742fa959cb308bb", size = 25038 },
 ]
 
 [[package]]
@@ -695,7 +695,7 @@ requires-dist = [
     { name = "aiohttp", specifier = ">=3.11.14" },
     { name = "anyio", specifier = ">=4.9.0" },
     { name = "beautifulsoup4", specifier = ">=4.13.4" },
-    { name = "jiki", specifier = ">=0.0.7" },
+    { name = "jiki", specifier = "==0.0.8" },
     { name = "mcp", extras = ["cli"], specifier = ">=1.5.0" },
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "pytest", specifier = ">=8.3.5" },

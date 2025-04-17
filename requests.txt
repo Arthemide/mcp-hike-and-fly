@@ -1,9 +1,0 @@
-Find all Strava segments near this address: 34 Boulevard de l'opéra
-Give me the segments near this coordinates : southwest_lat 48.106390990990995, southwest_lon -1.6402872375374413, northeast_lat 48.12440900900901, northeast_lon -1.6399127624625585
-
-Give me the ranking of the segment with the id 17008522
-
-
-42.9083745, 0.1452684
-42.86332945495496,0.1442186038804792
-42.953419545045044,0.1463181961195208

@@ -15,8 +15,8 @@ help:
 install:
 	uv sync
 
-.PHONY: run ## Run the host CLI
-run:
+.PHONY: host ## Run the host CLI
+host:
 	uv run host/jiki.py
 
 .PHONY: lint ## Run linter

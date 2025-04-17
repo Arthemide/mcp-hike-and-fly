@@ -14,8 +14,8 @@ Follow the instructions in the [.env.example](.env.example) file to define the `
 
 And the [STRAVA_ACCESS_TOKEN](https://developers.strava.com/docs/getting-started/) environment variable.
 
-### Run the server
+### Run the host CLI
 
 ```bash
-make run
+make host
 ```

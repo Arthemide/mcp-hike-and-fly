@@ -11,7 +11,7 @@ dependencies = [
     "aiohttp>=3.11.14",
     "anyio>=4.9.0",
     "beautifulsoup4>=4.13.4",
-    "jiki==0.0.8",
+    "jiki==0.0.9",
     "mcp[cli]>=1.5.0",
     "pandas>=2.2.3",
     "pytest>=8.3.5",

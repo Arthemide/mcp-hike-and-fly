@@ -19,3 +19,5 @@ And the [STRAVA_ACCESS_TOKEN](https://developers.strava.com/docs/getting-started
 ```bash
 make host
 ```
+
+[MCP Article on Octo Blog](https://blog.octo.com/comprendre-le-model-context-protocol-(mcp)--connecter-les-llms-a-vos-donnees-et-outils)
